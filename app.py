@@ -16,7 +16,7 @@ with tab1:
     c1, c2 = st.columns(2)
     with c1:
         if st.button("Differentiate", key="differentiate"):
-            try: st.latex(st.latex if False else str(differentiate(expr, variable)))
+            try: st.latex(str(differentiate(expr, variable)))
             except Exception as exc: st.error(str(exc))
     with c2:
         if st.button("Integrate", key="integrate"):
