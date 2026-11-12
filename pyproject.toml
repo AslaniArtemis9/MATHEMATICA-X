@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mathematica-x"
+version = "1.0.0"
+description = "Interactive symbolic, numerical and orbital mathematics laboratory"
+requires-python = ">=3.10"
+dependencies = ["streamlit>=1.35", "numpy>=1.26", "sympy>=1.12", "plotly>=5.20"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
