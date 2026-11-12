@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
+import sympy as sp
 from mathematica_x.symbolic import differentiate, integrate
 from mathematica_x.numerical import bisection, newton, simpson
 from mathematica_x.orbits import simulate_two_body
@@ -16,11 +17,11 @@ with tab1:
     c1, c2 = st.columns(2)
     with c1:
         if st.button("Differentiate", key="differentiate"):
-            try: st.latex(str(differentiate(expr, variable)))
+            try: st.latex(sp.latex(differentiate(expr, variable)))
             except Exception as exc: st.error(str(exc))
     with c2:
         if st.button("Integrate", key="integrate"):
-            try: st.latex(str(integrate(expr, variable)))
+            try: st.latex(sp.latex(integrate(expr, variable)))
             except Exception as exc: st.error(str(exc))
 with tab2:
     col1, col2 = st.columns(2)
